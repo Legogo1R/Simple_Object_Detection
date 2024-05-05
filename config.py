@@ -8,6 +8,7 @@ TEST_PATH = os.path.sep.join([BASE_PATH, "test"])
 
 BASE_OUTPUT = "output"
 
+TORCH_HUB_PATH = 'f:\Library\AI_Models\\pytorch\\'  # Set path for torch.hub weights download directory or set as "None" for default path
 MODEL_PATH = os.path.sep.join([BASE_OUTPUT, "detector.pth"])
 LE_PATH = os.path.sep.join([BASE_OUTPUT, "le.pickle"])  # Label encoder
 PLOTS_PATH = os.path.sep.join([BASE_OUTPUT, "plots"])
@@ -20,9 +21,11 @@ PIN_MEMORY = True if DEVICE == "cuda" else False
 MEAN = [0.485, 0.456, 0.406]
 STD = [0.229, 0.224, 0.225]
 
+
+NUM_CLASSES = 6
 INIT_LR = 1e-4
 NUM_EPOCHS = 20
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 
 # specify the loss weights
 LABELS = 1.0
@@ -36,4 +39,4 @@ CLS_MAP_DICT = {
     'orange' : 3,
     'pineapple' : 4,
     'water mellon' : 5,
-}
+    }
